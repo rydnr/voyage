@@ -5,10 +5,12 @@ services:
   - mongodb
 before_build:
   - SET PATH=C:\MinGW\msys\1.0\bin;%PATH%
-  - echo %PATH%
   - git clone --depth=1 https://github.com/estebanlm/pharo-travis-ci.git
 build_script:
   - sh pharo-travis-ci\run-tests.sh
+after_build:
+  - dir
+  - cat PharoDebug.log
 environment:
   global: 
     baseline: VoyageMongo
