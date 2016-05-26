@@ -16,5 +16,5 @@ environment:
     baseline: "VoyageMongo"
     packages_dir: "mc"
   matrix:
-    pharo_version: "50"
-    pharo_version: "40"	
+  - pharo_version: "50"
+  - pharo_version: "40"	
