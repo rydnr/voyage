@@ -15,4 +15,4 @@ environment:
   global: 
     - baseline=VoyageMongo
     - packages_dir=mc
-	- pharo_version=50
+    - pharo_version=50
