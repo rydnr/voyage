@@ -7,7 +7,7 @@ before_build:
   - SET PATH=C:\MinGW\msys\1.0\bin;%PATH%
   - git clone --depth=1 https://github.com/estebanlm/pharo-travis-ci.git
 build_script:
-  - sh pharo-travis-ci\run-tests.sh  
+  - bash pharo-travis-ci\run-tests.sh  
 on_failure:
   - dir
   - cat PharoDebug.log
