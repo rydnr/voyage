@@ -13,6 +13,8 @@ on_failure:
   - cat PharoDebug.log
 environment:
   global:
-    baseline: 'VoyageMongo'
-    packages_dir: 'mc'
-    pharo_version: '60'
+    baseline: "VoyageMongo"
+    packages_dir: "mc"
+  matrix:
+    pharo_version: "50"
+    pharo_version: "40"	
