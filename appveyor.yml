@@ -7,11 +7,15 @@ before_build:
   - SET PATH=C:\MinGW\msys\1.0\bin;%PATH%
   - git clone --depth=1 https://github.com/estebanlm/pharo-travis-ci.git
 build_script:
-  - bash -c "baseline=%BASELINE% packages_dir=%PACKAGES_DIR% pharo_version=%PHARO_VERSION% pharo-travis-ci/run-tests.sh"
+  - bash -c "baseline=%baseline% packages_dir=%packages_dir% tests=%tests% pharo_version=%pharo_version% pharo-travis-ci/run-tests.sh"
 on_failure:
-  - dir
   - cat PharoDebug.log
 environment:
-  BASELINE: "VoyageMongo"
-  PACKAGES_DIR: "mc"
-  PHARO_VERSION: "60"
+  global:
+    baseline: "VoyageMongo"
+    packages_dir: "mc"
+    tests: "Voyage.*"
+  matrix:
+    - pharo_version: "50"
+    - pharo_version: "40"
+    - pharo_version: "30"
