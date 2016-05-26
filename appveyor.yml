@@ -6,8 +6,7 @@ services:
 before_build:
   - SET PATH=%PATH%;C:\msys64\usr\bin
   - git clone --depth=1 https://github.com/estebanlm/pharo-travis-ci.git
-build: off
-test_script:
+build_script:
   - sh pharo-travis-ci\run-tests.sh
 environment:
   global: 
