@@ -4,7 +4,7 @@ platform:
 services:
   - mongodb
 before_build:
-  - SET PATH=%PATH%;C:\MinGW\msys\1.0\bin
+  - SET PATH=C:\MinGW\msys\1.0\bin;%PATH%
   - echo %PATH%
   - git clone --depth=1 https://github.com/estebanlm/pharo-travis-ci.git
 build_script:
