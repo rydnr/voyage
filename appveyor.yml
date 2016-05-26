@@ -1,0 +1,16 @@
+shallow_clone: true
+platform:
+  - x86
+services:
+  - mongodb
+before_build:
+  - SET PATH=%PATH%;C:\msys64\usr\bin
+  - git clone --depth=1 https://github.com/estebanlm/pharo-travis-ci.git
+build: off
+test_script:
+  - sh pharo-travis-ci\run-tests.sh
+environment:
+  global: 
+    baseline: VoyageMongo
+    packages_dir: mc
+    pharo_version: 50
